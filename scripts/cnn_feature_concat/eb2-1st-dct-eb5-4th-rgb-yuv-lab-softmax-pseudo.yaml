@@ -1,0 +1,39 @@
+run_name: eb2-1st-dct-eb5-4th-rgb-yuv-lab-softmax-pseudo
+cnn_run_names:
+- dct-d8-stride-1-2-l16-q-cos
+- rgb-4class-eb5-cutmix-p100-4th
+- yuv-4class-eb5-cutmix-p100-4th
+- lab-4class-eb5-cutmix-p100-4th
+fold_index: 4
+model:
+  apply_softmax_to_each_input: true
+  layers:
+  - torch.nn.Dropout(p=0.25)
+  - torch.nn.Linear(7552, 1000)
+  - torch.nn.ReLU()
+  - torch.nn.Dropout(p=0.5)
+  - torch.nn.Linear(1000, 1000)
+  - torch.nn.ReLU()
+  - torch.nn.Dropout(p=0.5)
+  - torch.nn.Linear(1000, 4)
+n_folds: 5
+optim:
+  batch_size: 128
+  lr_scheduler: exp
+  lr_scheduler_params:
+    gamma: 0.995
+    warmup_epochs: 0
+  nb_epoch: 200
+  optimizer: SGD
+  optimizer_params:
+    dampening: 0.0
+    lr: 0.002
+    momentum: 0.0
+    nesterov: false
+    weight_decay: 0.001171875
+  use_reduced_focal_loss: false
+perform_augmentation: true
+use_bn: true
+soft_label: true
+label_smooth: null
+pseudo_label_run: eb2-1st-dct-eb5-3rd-rgb-yuv-lab

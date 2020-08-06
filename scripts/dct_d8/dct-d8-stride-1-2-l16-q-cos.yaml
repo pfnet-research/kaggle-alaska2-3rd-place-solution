@@ -1,0 +1,26 @@
+run_name: dct-d8-stride-1-2-l16-q-cos
+fold_index: 4
+n_folds: 5
+subsample: 1.0
+perform_augmentation: true
+use_dilation_8: true
+strides: [1, 2]
+L: 16
+include_Q_matrix: true
+include_cos_matrix: true
+model:
+  backbone: efficientnet-b2
+optim:
+  optimizer: SGD
+  optimizer_params:
+    lr: 0.025  # 0.2 * (4 * 4 / 128)
+    momentum: 0.9
+    weight_decay: 1.0e-5
+    dampening: 0.0
+    nesterov: True
+  lr_scheduler: cos
+  lr_scheduler_params:
+    warmup_epochs: 0
+    warmup_factor: 0.1
+  batch_size: 4
+  nb_epoch: 50

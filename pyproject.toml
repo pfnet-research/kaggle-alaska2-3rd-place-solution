@@ -1,0 +1,12 @@
+[tool.isort]
+force_grid_wrap = 0
+include_trailing_comma = true
+known_first_party = ["somen"]
+known_third_party = ["pycls", "timm", "pyconv"]
+line_length = 120
+multi_line_output = 3
+use_parentheses = true
+
+[tool.black]
+line-length = 120
+target-version = ["py37"]

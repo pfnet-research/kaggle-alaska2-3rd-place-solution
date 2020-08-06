@@ -1,0 +1,8 @@
+mlflow
+feather-format
+tables
+pytorch
+ignite
+scikit-learn
+pandas
+numpy

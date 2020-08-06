@@ -1,0 +1,20 @@
+run_name: holdout-eb5-with-tsne
+n_folds: 5
+fold_index: 4
+second_layer_n_folds: 5
+first_layer_runs:
+- eb2-1st-dct-eb5-4th-rgb-yuv-lab-softmax-pseudo
+tsne:
+  run_names:
+  - dct-d8-stride-1-2-l16-q-cos
+  - rgb-4class-eb5-cutmix-p100-4th
+  - yuv-4class-eb5-cutmix-p100-4th
+  - lab-4class-eb5-cutmix-p100-4th
+  n_components: 2
+  perplexity: 30.0
+second_layer_model:
+  model_name: LightGBM
+  params:
+    num_boost_round: 1000
+    params: null
+task: binary

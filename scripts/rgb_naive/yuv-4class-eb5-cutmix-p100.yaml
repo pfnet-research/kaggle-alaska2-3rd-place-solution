@@ -1,0 +1,30 @@
+run_name: yuv-4class-eb5-cutmix-p100
+fold_index: 4
+n_folds: 5
+subsample: 1.0
+read_method: YUV
+perform_augmentation: true
+model:
+  backbone: efficientnet-b5
+optim:
+  optimizer: SGD
+  optimizer_params:
+    lr: 0.05  # 0.2 * (8 * 4 / 128)
+    momentum: 0.9
+    weight_decay: 1.0e-5
+    dampening: 0.0
+    nesterov: True
+  lr_scheduler: cos
+  lr_scheduler_params:
+    warmup_epochs: 0
+    warmup_factor: 0.1
+  batch_size: 8
+  nb_epoch: 50
+  cover_stego_pair: false
+  use_reduced_focal_loss: false
+msda:
+  method: CutMix
+  params:
+    beta: 1.0
+    cutmix_prob: 1.0
+soft_label: false
