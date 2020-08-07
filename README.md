@@ -1,7 +1,7 @@
 3rd place solution of ALASKA2 Image Steganalysis
 ===
 
-Codes for 3rd place solution of [ALASKA2 Image Steganalysis](https://www.kaggle.com/c/alaska2-image-steganalysis/overview) on Kaggle
+Code for 3rd place solution of [ALASKA2 Image Steganalysis](https://www.kaggle.com/c/alaska2-image-steganalysis/overview) on Kaggle
 
 Solution Overview
 ---
