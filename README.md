@@ -1,12 +1,11 @@
 3rd place solution of ALASKA2 Image Steganalysis
 ===
 
-Code for 3rd place solution of [ALASKA2 Image Steganalysis](https://www.kaggle.com/c/alaska2-image-steganalysis/overview) on Kaggle
+Code for 3rd place solution of [ALASKA2 Image Steganalysis](https://www.kaggle.com/c/alaska2-image-steganalysis/overview) on Kaggle.
 
-Solution Overview
----
-
-See [the post](https://www.kaggle.com/c/alaska2-image-steganalysis/discussion/168870) in the kaggle discussion
+A description of the method can be found in the following paper and [this post](https://www.kaggle.com/c/alaska2-image-steganalysis/discussion/168870) in the kaggle discussion.
+> [**An Ensemble Model using CNNs on Different Domains for ALASKA2 Image Steganalysis**](https://ieeexplore.ieee.org/document/9360892)  
+> Kaizaburo Chubachi
 
 Run Instructions
 ---
@@ -87,4 +86,18 @@ Make a configuration file like `scripts/cnn_feature_concat/dct-d8-stride-1-2-l16
 python scripts/cnn_feature_concat/train.py \
     --config scripts/cnn_feature_concat/${CONFIG_NAME}.yaml \
     --task train
+```
+
+Citation
+---
+
+```
+@inproceedings{chubachi2020alaska,
+  author={Kaizaburo Chubachi},
+  booktitle={2020 IEEE International Workshop on Information Forensics and Security (WIFS)}, 
+  title={An Ensemble Model using CNNs on Different Domains for ALASKA2 Image Steganalysis}, 
+  year={2020},
+  pages={1-6},
+  doi={10.1109/WIFS49906.2020.9360892}
+}
 ```
